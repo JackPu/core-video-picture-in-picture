@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ykit-Starter</title>
+    <link rel="stylesheet" href="./prd/styles/index.css" />
+</head>
+<body>
+    <div class="app">
+        <video id="video" src="./assets/groot-dancing.mp4" controls></video>
+        <p><button id="pipButton">pipButton</button></p>
+    </div>
+
+    <script src="./prd/scripts/index.js"></script>
+    <script>
+        pipButton.hidden = !document.pictureInPictureEnabled || video.disablePictureInPicture;
+        alert('mediaSession' in navigator)
+        pipButton.addEventListener('click', function() {
+            // If there is no element in Picture-in-Picture yet, let’s request
+            // Picture-in-Picture for the video, otherwise leave it.
+            if (!document.pictureInPictureElement) {
+            video.requestPictureInPicture()
+            .catch(error => {
+                // Video failed to enter Picture-in-Picture mode.
+            });
+            } else {
+            document.exitPictureInPicture()
+            .catch(error => {
+                // Video failed to leave Picture-in-Picture mode.
+            });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "core-video-picture-in-picture",
+  "version": "1.0.0",
+  "description": "ykit starter",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ykit server -p 8088",
+    "build": "ykit pack -m"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ykit-config-es6": "^3.2.1"
+  }
+}
